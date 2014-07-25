@@ -14,6 +14,8 @@ namespace Tutorials
             Console.WriteLine("[1] Loops");
             Console.WriteLine("[2] Add using a function");
             Console.WriteLine("[3] Instance");
+            Console.WriteLine("[4] Error Exception");
+            Console.WriteLine("[5] Generics");
             Console.Write("Choose option: ");
             int value = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
@@ -26,11 +28,15 @@ namespace Tutorials
                     break;
 
                 case 2:
+
+                    int numbah1;
+                    int numbah2;
+
                     Console.Write("Enter numbah1: ");
-                    int numbah1 = Convert.ToInt32(Console.ReadLine());
+                    numbah1 = Convert.ToInt32(Console.ReadLine());
                     
                     Console.Write("Enter numbah2: ");
-                    int numbah2 = Convert.ToInt32(Console.ReadLine());
+                    numbah2 = Convert.ToInt32(Console.ReadLine());
                     
                     SecondChallenge(numbah1 , numbah2);
                     break;
@@ -38,6 +44,16 @@ namespace Tutorials
                 case 3:
 
                     ThirdChallenge("Instance");
+                    break;
+
+                case 4:
+
+                    FourthChallenge("Exception Error");
+                    break;
+
+                case 5:
+
+                    FifthChallenge("Generics");
                     break;
 
                 default:
@@ -77,7 +93,7 @@ namespace Tutorials
 
             Car Instance = new Car();
 
-            Instance.Make = "Mitsubishi";
+            Instance.Make = "Mitsubishi number 1";
             Instance.Model = "Montero";
             Instance.Color = "blue";
 
@@ -87,5 +103,47 @@ namespace Tutorials
 
             Console.WriteLine();
         }
+
+        static void FourthChallenge(string option)
+        {
+            Console.WriteLine(option);
+
+            int intValue = 32;
+            object objValue = intValue;
+            string strValue;
+            string errormessage;
+                
+            
+
+            try
+            {
+               strValue = (string)objValue;
+            }
+            catch (Exception e)
+            {
+                errormessage = e.Message;
+
+                Console.WriteLine();
+                Console.WriteLine(errormessage);
+            }
+
+        }
+
+        static void FifthChallenge(string option)
+        {
+            Console.WriteLine();
+            Console.WriteLine(option);
+
+            SortedList<string, string> strList = new SortedList<string, string>();
+            strList.Add("1", "numbah1");
+            strList.Add("2", "numbah2");
+            strList.Add("3", "numbah3");
+            
+
+
+        }
+         
+       
     }
 }
+
