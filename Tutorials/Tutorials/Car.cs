@@ -37,13 +37,13 @@ namespace Tutorials
         public void Drive()
         {
             Console.WriteLine();
-            Console.WriteLine("Driving");
+            Console.WriteLine("The car is Driving ");
         }
 
         public void Stop()
         {
             Console.WriteLine();
-            Console.WriteLine("Stopping");
+            Console.WriteLine("The car is Stopping ");
         }
 
         public void DisplayInfo()

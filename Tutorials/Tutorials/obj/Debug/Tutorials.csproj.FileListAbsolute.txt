@@ -3,3 +3,4 @@ c:\users\admin\documents\visual studio 2012\Projects\Tutorials\Tutorials\bin\Deb
 c:\users\admin\documents\visual studio 2012\Projects\Tutorials\Tutorials\bin\Debug\Tutorials.pdb
 c:\users\admin\documents\visual studio 2012\Projects\Tutorials\Tutorials\obj\Debug\Tutorials.exe
 c:\users\admin\documents\visual studio 2012\Projects\Tutorials\Tutorials\obj\Debug\Tutorials.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\Tutorials\Tutorials\obj\Debug\Tutorials.csprojResolveAssemblyReference.cache
