@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tutorials.Models;
 
 namespace Tutorials
 {
@@ -16,6 +17,7 @@ namespace Tutorials
             Console.WriteLine("[3] Instance");
             Console.WriteLine("[4] Error Exception");
             Console.WriteLine("[5] Generics");
+            Console.WriteLine("[6] Class from a model");
             Console.Write("Choose option: ");
             int value = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
@@ -54,6 +56,11 @@ namespace Tutorials
                 case 5:
 
                     FifthChallenge("Generics");
+                    break;
+
+                case 6:
+
+                    ClassFromModel("Class from another model");
                     break;
 
                 default:
@@ -134,15 +141,56 @@ namespace Tutorials
             Console.WriteLine();
             Console.WriteLine(option);
 
-            SortedList<string, string> strList = new SortedList<string, string>();
-            strList.Add("1", "numbah1");
-            strList.Add("2", "numbah2");
-            strList.Add("3", "numbah3");
-            
+            SortedList<int, string> strList = new SortedList<int, string>();
+            strList.Add(1, "numbah1");
+            strList.Add(2, "numbah2");
+            strList.Add(3, "numbah3");
 
+            Console.WriteLine();
+            //Prints the data inside the list.
+            for (int i = 1; i <= strList.Count; i++)
+            {
+                Console.WriteLine(strList[i]);
+            }
+
+            List<string> stringlist = new List<string>();
+            stringlist.Add("numbah1");
+            stringlist.Add("numbah2");
+            stringlist.Add("numbah3");
+
+
+            Console.WriteLine();
+            foreach (string asd in stringlist)
+            {
+                Console.WriteLine(asd);
+            }
 
         }
-         
+
+        static void ClassFromModel(string option) 
+        {
+            Console.WriteLine();
+            Console.WriteLine(option);
+
+            GoogleData data = new GoogleData();
+            data.ParseData();
+            //SampleModelClass model = new SampleModelClass();
+            //Results dataResult = new Results();
+
+            //List<string> newlist = dataResult.Dataresult;
+
+            //Console.WriteLine(dataResult.Dataresult);
+
+            //dataResult.sample();
+
+            //model.Numbah = 12334;
+            //model.Letah = "stringsssss";
+
+            //Console.WriteLine(model.Numbah);
+            //Console.WriteLine(model.Letah);
+
+            //Console.WriteLine();
+        }
        
     }
 }
