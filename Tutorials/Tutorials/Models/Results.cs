@@ -9,20 +9,9 @@ namespace Tutorials.Models
     class Results : Result
     {
 
-        private List<Result> dataresult = new List<Result>();
-        private int total;
-        private string searchterm;
+        public List<Result> dataresult = new List<Result>();
+        public int total;
+        public string searchterm;
 
-
-
-
-        public void sample()
-        {
-            foreach (Result asd in this.dataresult)
-            {
-                Console.WriteLine("asdasd");
-                Console.WriteLine(asd);
-            }
-        }
     }
 }

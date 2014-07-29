@@ -15,32 +15,28 @@ namespace Tutorials
             Console.WriteLine("[1] Loops");
             Console.WriteLine("[2] Add using a function");
             Console.WriteLine("[3] Instance");
-            Console.WriteLine("[4] Error Exception");
+            Console.WriteLine("[4] Error exception");
             Console.WriteLine("[5] Generics");
-            Console.WriteLine("[6] Class from a model");
+            Console.WriteLine("[6] Google docs");
+            Console.WriteLine("[7] Social mention");
+            Console.WriteLine("[8] asdasdd");
             Console.Write("Choose option: ");
+
             int value = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine();
 
             switch (value)
             {
 
                 case 1:
+
                     FirstChallenge("FOR LOOPS");
                     break;
 
                 case 2:
 
-                    int numbah1;
-                    int numbah2;
-
-                    Console.Write("Enter numbah1: ");
-                    numbah1 = Convert.ToInt32(Console.ReadLine());
-                    
-                    Console.Write("Enter numbah2: ");
-                    numbah2 = Convert.ToInt32(Console.ReadLine());
-                    
-                    SecondChallenge(numbah1 , numbah2);
+                    SecondChallenge("Add integer");
                     break;
 
                 case 3:
@@ -50,7 +46,7 @@ namespace Tutorials
 
                 case 4:
 
-                    FourthChallenge("Exception Error");
+                    FourthChallenge("Exception error");
                     break;
 
                 case 5:
@@ -60,10 +56,21 @@ namespace Tutorials
 
                 case 6:
 
-                    ClassFromModel("Class from another model");
+                    GoogleDocs("Google docs");
+                    break;
+
+                case 7:
+
+                    SocialMention("Social mention");
+                    break;
+
+                case 8:
+
+                    WebRequest("Web request");
                     break;
 
                 default:
+
                     Console.WriteLine("Value not present");
                     break;
 
@@ -85,8 +92,21 @@ namespace Tutorials
             }
         }
 
-        static void SecondChallenge(int numbah1 , int numbah2)
+        static void SecondChallenge(string option)
         {
+            Console.WriteLine();
+            Console.WriteLine(option);
+
+            int numbah1;
+            int numbah2;
+
+            Console.Write("Enter numbah1: ");
+            numbah1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter numbah2: ");
+            numbah2 = Convert.ToInt32(Console.ReadLine());
+                    
+
             int sum = numbah1 + numbah2;
             Console.WriteLine();
             Console.WriteLine("The sum is: "+ sum);
@@ -167,29 +187,60 @@ namespace Tutorials
 
         }
 
-        static void ClassFromModel(string option) 
+        static void GoogleDocs(string option) 
         {
             Console.WriteLine();
             Console.WriteLine(option);
 
-            GoogleData data = new GoogleData();
+            Console.Write("Enter search term: ");
+            var search = Console.ReadLine();
+            Console.WriteLine();
+
+            GoogleData data = new GoogleData(search);
             data.ParseData();
-            //SampleModelClass model = new SampleModelClass();
-            //Results dataResult = new Results();
 
-            //List<string> newlist = dataResult.Dataresult;
+        }
 
-            //Console.WriteLine(dataResult.Dataresult);
+        static void SocialMention(string option)
+        {
+            Console.WriteLine();
+            Console.WriteLine(option);
 
-            //dataResult.sample();
+            Console.Write("Enter search term: ");
+            var search = Console.ReadLine();
+            Console.WriteLine();
 
-            //model.Numbah = 12334;
-            //model.Letah = "stringsssss";
+            SocialMention data = new SocialMention(search);
+            data.ParseDataSM();
 
-            //Console.WriteLine(model.Numbah);
-            //Console.WriteLine(model.Letah);
+        }
 
-            //Console.WriteLine();
+        static void WebRequest(string option)
+        {
+            Console.WriteLine();
+            Console.WriteLine(option);
+            
+            Console.Write("Enter search term: ");
+
+            var search = Console.ReadLine();
+
+            //char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+
+            //string[] words = search.Split(delimiterChars);
+            //search = "";
+            //foreach (string s in words)
+            //{
+            //    search = string.Concat("string1", s);
+            //    search = string.Concat("string1", );
+            //    System.Console.WriteLine(s);
+            //}
+
+            SocialMention data = new SocialMention(search);
+            data.ParseDataSM();
+
+            GoogleData data2 = new GoogleData(search);
+            data2.ParseData();
+
         }
        
     }

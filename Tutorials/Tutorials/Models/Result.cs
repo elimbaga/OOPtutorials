@@ -14,14 +14,5 @@ namespace Tutorials.Models
         public string link { get; set; }
         public string source { get; set; }
 
-
-        //public Result(string Id, string Title, string Description, string Link, string Source)
-        //{
-        //    this.id = Id;
-        //    this.title = Title;
-        //    this.description = Description;
-        //    this.link = Link;
-        //    this.source = Source;
-        //}
     }
 }

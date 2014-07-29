@@ -50,6 +50,7 @@
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Results.cs" />
     <Compile Include="Models\SampleModelClass.cs" />
+    <Compile Include="Models\SocialMention.cs" />
     <Compile Include="Models\WebData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

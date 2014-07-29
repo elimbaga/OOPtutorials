@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tutorials.Models;
 
 namespace Tutorials.Models
 {
-    class GoogleData : WebData
+    class SocialMention : WebData
     {
-      
-        public GoogleData(string searchterm) 
+        public SocialMention(string searchterm)
         {
-            //storm
+            //gift+lasta
             this.searchterm = searchterm;
-            this.url = @"https://www.googleapis.com/books/v1/volumes?q="+ searchterm +"&key=AIzaSyAuYh918Pn760L5whpCozRFuD8JQsw_r7Q";
+            this.url = @"http://api2.socialmention.com/search?q=" +searchterm + "&f=json&t=all";
         }
 
-        public void ParseData()
+        public void ParseDataSM()
         {
             var result = this.DoRequest();
 
@@ -26,29 +24,30 @@ namespace Tutorials.Models
             Results ResultData = new Results();
 
             int count = 0;
+
             foreach (var item in returnData)
             {
+                
                 count += 1;
-
                 ResultData.dataresult.Add(new Result()
                 {
 
                     id = item["id"].ToString(),
-                    title = item["volumeInfo"]["title"].ToString(),
-                    description = item["volumeInfo"]["description"].ToString(),
-                    link = item["volumeInfo"]["infoLink"].ToString(),
-                    source = item["selfLink"].ToString()
+                    title = item["title"].ToString(),
+                    description = item["description"].ToString(),
+                    link = item["link"].ToString(),
+                    source = item["source"].ToString()
 
                 });
             }
 
-            foreach (var data in ResultData.dataresult)
+            foreach (var asd in ResultData.dataresult)
             {
-                Console.WriteLine("ID: " + data.id);
-                Console.WriteLine("Title: " + data.title);
-                Console.WriteLine("Description: " + data.description);
-                Console.WriteLine("Link: " + data.link);
-                Console.WriteLine("Source: " + data.source);
+                Console.WriteLine("ID: " + asd.id);
+                Console.WriteLine("Title: " + asd.title);
+                Console.WriteLine("Description: " + asd.description);
+                Console.WriteLine("Link: " + asd.link);
+                Console.WriteLine("Source: " + asd.source);
                 Console.WriteLine();
                 Console.WriteLine();
             }
@@ -60,7 +59,7 @@ namespace Tutorials.Models
             Console.WriteLine("Search count:" + ResultData.total);
 
             Console.WriteLine();
-        }
 
+        }
     }
 }
