@@ -11,70 +11,109 @@ namespace Tutorials
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Options");
-            Console.WriteLine("[1] Loops");
-            Console.WriteLine("[2] Add using a function");
-            Console.WriteLine("[3] Instance");
-            Console.WriteLine("[4] Error exception");
-            Console.WriteLine("[5] Generics");
-            Console.WriteLine("[6] Google docs");
-            Console.WriteLine("[7] Social mention");
-            Console.WriteLine("[8] asdasdd");
-            Console.Write("Choose option: ");
 
-            int value = Convert.ToInt32(Console.ReadLine());
+            var retry = true;
 
-            Console.WriteLine();
 
-            switch (value)
+            while(retry)
             {
 
-                case 1:
+                Console.Clear();
 
-                    FirstChallenge("FOR LOOPS");
-                    break;
+                Console.WriteLine("Options");
+                Console.WriteLine("[1] Loops");
+                Console.WriteLine("[2] Add using a function");
+                Console.WriteLine("[3] Instance");
+                Console.WriteLine("[4] Error exception");
+                Console.WriteLine("[5] Generics");
+                //Console.WriteLine("[6] Google docs");
+                //Console.WriteLine("[7] Social mention");
+                Console.WriteLine("[6] Web request");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Choose option: ");
 
-                case 2:
+                int value = Convert.ToInt32(Console.ReadLine());
 
-                    SecondChallenge("Add integer");
-                    break;
+                Console.WriteLine();
 
-                case 3:
+                switch (value)
+                {
 
-                    ThirdChallenge("Instance");
-                    break;
+                    case 1:
 
-                case 4:
+                        FirstChallenge("FOR LOOPS");
+                        break;
 
-                    FourthChallenge("Exception error");
-                    break;
+                    case 2:
 
-                case 5:
+                        SecondChallenge("Add integer");
+                        break;
 
-                    FifthChallenge("Generics");
-                    break;
+                    case 3:
 
-                case 6:
+                        ThirdChallenge("Instance");
+                        break;
 
-                    GoogleDocs("Google docs");
-                    break;
+                    case 4:
 
-                case 7:
+                        FourthChallenge("Exception error");
+                        break;
 
-                    SocialMention("Social mention");
-                    break;
+                    case 5:
 
-                case 8:
+                        FifthChallenge("Generics");
+                        break;
 
-                    WebRequest("Web request");
-                    break;
+                    //case 6:
 
-                default:
+                    //    GoogleDocs("Google docs");
+                    //    break;
 
-                    Console.WriteLine("Value not present");
-                    break;
+                    //case 7:
+
+                    //    SocialMention("Social mention");
+                    //    break;
+
+                    case 6:
+
+                        WebRequest("Web request");
+                        break;
+
+                    case 7:
+
+                        retry = false;
+                        break;
+
+                    default:
+
+                        Console.WriteLine("Value not present");
+                        break;
+
+                }
+
+                if (retry) 
+                {
+                    
+                        Console.WriteLine();
+                        Console.Write("Retry?[Y/N]:");
+                        string response = Console.ReadLine().ToUpper();
+
+                        if (response == "Y" || response == "N")
+                        {
+                            if (response == "N")
+                            {
+                                retry = false;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong input");
+                        }
+                }
+                
 
             }
+
             
 
        
@@ -187,42 +226,71 @@ namespace Tutorials
 
         }
 
-        static void GoogleDocs(string option) 
-        {
-            Console.WriteLine();
-            Console.WriteLine(option);
+        //static void GoogleDocs(string option) 
+        //{
+        //    Console.WriteLine();
+        //    Console.WriteLine(option);
+            
+        //    Console.Write("Enter search term: ");
+        //    var search = Console.ReadLine();
+        //    Console.WriteLine();
 
-            Console.Write("Enter search term: ");
-            var search = Console.ReadLine();
-            Console.WriteLine();
+        //    GoogleData data = new GoogleData(search);
+        //    data.ParseData();
 
-            GoogleData data = new GoogleData(search);
-            data.ParseData();
+        //}
 
-        }
+        //static void SocialMention(string option)
+        //{
+        //    Console.WriteLine();
+        //    Console.WriteLine(option);
 
-        static void SocialMention(string option)
-        {
-            Console.WriteLine();
-            Console.WriteLine(option);
+        //    Console.Write("Enter search term: ");
+        //    var search = Console.ReadLine();
+        //    Console.WriteLine();
 
-            Console.Write("Enter search term: ");
-            var search = Console.ReadLine();
-            Console.WriteLine();
+        //    SocialMention data = new SocialMention(search);
+        //    data.ParseDataSM();
 
-            SocialMention data = new SocialMention(search);
-            data.ParseDataSM();
-
-        }
+        //}
 
         static void WebRequest(string option)
         {
             Console.WriteLine();
             Console.WriteLine(option);
-            
+
+            Console.WriteLine();
+            Console.WriteLine("[1] Social media ");
+            Console.WriteLine("[2] Google docs ");
+            Console.WriteLine();
+            Console.Write("Which API to use?: ");
+
+            int api = Convert.ToInt32(Console.ReadLine());
+
             Console.Write("Enter search term: ");
 
             var search = Console.ReadLine();
+
+
+            switch (api)
+            { 
+                case 1:
+
+                       SocialMention data = new SocialMention(search);
+                       data.ParseDataSM();
+
+                    break;
+
+                case 2:
+
+                        GoogleData data2 = new GoogleData(search);
+                        data2.ParseData();
+                    break;
+
+                default:
+                    break;
+            
+            }
 
             //char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
 
@@ -234,12 +302,6 @@ namespace Tutorials
             //    search = string.Concat("string1", );
             //    System.Console.WriteLine(s);
             //}
-
-            SocialMention data = new SocialMention(search);
-            data.ParseDataSM();
-
-            GoogleData data2 = new GoogleData(search);
-            data2.ParseData();
 
         }
        

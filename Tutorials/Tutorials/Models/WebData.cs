@@ -20,6 +20,7 @@ namespace Tutorials.Models
         {
 
             var webRequest = WebRequest.Create(this.url);
+
             using (var response = webRequest.GetResponse())
             {
                 using (var content = response.GetResponseStream())
@@ -30,11 +31,7 @@ namespace Tutorials.Models
                         JObject obj = JObject.Parse(strContent);
 
                         return obj;
-                        //var items = obj["items"].ToList();
-                        //foreach (var item in items)
-                        //{
-                        //    var tmp = item["volumeInfo"]["title"].ToString();
-                        //}
+                       
                     }
                 }
             }

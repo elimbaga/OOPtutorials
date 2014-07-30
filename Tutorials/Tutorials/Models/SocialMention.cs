@@ -12,7 +12,7 @@ namespace Tutorials.Models
         {
             //gift+lasta
             this.searchterm = searchterm;
-            this.url = @"http://api2.socialmention.com/search?q=" +searchterm + "&f=json&t=all";
+            this.url = @"http://api2.socialmention.com/search?q="+searchterm+"&f=json&t=all";
         }
 
         public void ParseDataSM()
@@ -25,40 +25,51 @@ namespace Tutorials.Models
 
             int count = 0;
 
-            foreach (var item in returnData)
+            try
             {
-                
-                count += 1;
-                ResultData.dataresult.Add(new Result()
+
+                foreach (var item in returnData)
                 {
 
-                    id = item["id"].ToString(),
-                    title = item["title"].ToString(),
-                    description = item["description"].ToString(),
-                    link = item["link"].ToString(),
-                    source = item["source"].ToString()
+                    count += 1;
+                    ResultData.dataresult.Add(new Result()
+                    {
 
-                });
+                        id = item["id"].ToString(),
+                        title = item["title"].ToString(),
+                        description = item["description"].ToString(),
+                        link = item["link"].ToString(),
+                        source = item["source"].ToString()
+
+                    });
+                }
+
+                foreach (var asd in ResultData.dataresult)
+                {
+                    Console.WriteLine("ID: " + asd.id);
+                    Console.WriteLine("Title: " + asd.title);
+                    Console.WriteLine("Description: " + asd.description);
+                    Console.WriteLine("Link: " + asd.link);
+                    Console.WriteLine("Source: " + asd.source);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+
+                ResultData.searchterm = this.searchterm;
+                ResultData.total = count;
+
+                Console.WriteLine("Searched keyword:" + ResultData.searchterm);
+                Console.WriteLine("Search count:" + ResultData.total);
+
+                Console.WriteLine();
             }
-
-            foreach (var asd in ResultData.dataresult)
+            catch (Exception ex)
             {
-                Console.WriteLine("ID: " + asd.id);
-                Console.WriteLine("Title: " + asd.title);
-                Console.WriteLine("Description: " + asd.description);
-                Console.WriteLine("Link: " + asd.link);
-                Console.WriteLine("Source: " + asd.source);
-                Console.WriteLine();
-                Console.WriteLine();
+                
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Something went wrong, either the returned value is too long or the searched keyword was not found on the list.");
             }
-
-            ResultData.searchterm = this.searchterm;
-            ResultData.total = count;
-
-            Console.WriteLine("Searched keyword:" + ResultData.searchterm);
-            Console.WriteLine("Search count:" + ResultData.total);
-
-            Console.WriteLine();
+           
 
         }
     }

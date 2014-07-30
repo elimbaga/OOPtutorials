@@ -8,7 +8,7 @@ namespace Tutorials
 {
     class SubClass : FirstClass
     {
-        public string name;
-        public string ownersubclass;
+        //public string name;
+        //public string ownersubclass;
     }
 }

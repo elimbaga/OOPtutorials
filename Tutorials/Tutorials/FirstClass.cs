@@ -8,8 +8,8 @@ namespace Tutorials
 {
     class FirstClass
     {
-        private string Word;
-        private string Color;
+        private string word;
+        private string color;
         private int numbah;
 
         public int Numbah
@@ -28,6 +28,42 @@ namespace Tutorials
                 }
                 
             
+            }
+        }
+
+        public string Word
+        {
+            get { return this.word; }
+
+            set 
+            {
+
+                try
+                {
+                    this.word = value;
+                }
+                catch(Exception ex)
+                {
+                    Console.Write(ex.Message);
+                }
+            }
+        }
+
+        public string Color
+        {
+            get { return this.color; }
+
+            set
+            {
+
+                try
+                {
+                    this.color = value;
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.Message);
+                }
             }
         }
 
