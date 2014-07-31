@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using Tutorials.Models;
 
 namespace Tutorials
@@ -11,6 +12,7 @@ namespace Tutorials
     {
         static void Main(string[] args)
         {
+
 
             var retry = true;
 
@@ -31,8 +33,17 @@ namespace Tutorials
                 Console.WriteLine("[6] Web request");
                 Console.WriteLine("[7] Quit");
                 Console.Write("Choose option: ");
+                int value = 0;
+                try
+                {
+                    value = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
-                int value = Convert.ToInt32(Console.ReadLine());
+                
 
                 Console.WriteLine();
 
@@ -97,7 +108,7 @@ namespace Tutorials
                         Console.WriteLine();
                         Console.Write("Retry?[Y/N]:");
                         string response = Console.ReadLine().ToUpper();
-
+                        
                         if (response == "Y" || response == "N")
                         {
                             if (response == "N")
@@ -107,17 +118,16 @@ namespace Tutorials
                         }
                         else
                         {
+                            Console.WriteLine();
                             Console.WriteLine("Wrong input");
+                            Console.ReadKey(true);
+
                         }
                 }
                 
 
             }
-
-            
-
-       
-            
+     
         }
 
         static void FirstChallenge(string option)
