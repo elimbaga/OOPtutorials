@@ -12,7 +12,7 @@ namespace Tutorials.Models
       
         public GoogleData(string searchterm) 
         {
-            //storm
+            //use storm as the keyword for the search
             this.searchterm = searchterm;
             this.url = @"https://www.googleapis.com/books/v1/volumes?q="+searchterm+"&key=AIzaSyAuYh918Pn760L5whpCozRFuD8JQsw_r7Q";
            

@@ -13,7 +13,7 @@ namespace Tutorials.Models
     {
         public string url { get; set; }
         public string searchterm { get; set; }
-
+        public string sampleString { get; set; }
 
 
         public JObject DoRequest()

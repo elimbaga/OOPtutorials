@@ -84,7 +84,7 @@ namespace Tutorials
 
                     //    SocialMention("Social mention");
                     //    break;
-
+                         
                     case 6:
 
                         WebRequest("Web request");
@@ -236,33 +236,33 @@ namespace Tutorials
 
         }
 
-        //static void GoogleDocs(string option) 
-        //{
-        //    Console.WriteLine();
-        //    Console.WriteLine(option);
-            
-        //    Console.Write("Enter search term: ");
-        //    var search = Console.ReadLine();
-        //    Console.WriteLine();
+        static void GoogleDocs(string option)
+        {
+            Console.WriteLine();
+            Console.WriteLine(option);
 
-        //    GoogleData data = new GoogleData(search);
-        //    data.ParseData();
+            Console.Write("Enter search term: ");
+            var search = Console.ReadLine();
+            Console.WriteLine();
 
-        //}
+            GoogleData data = new GoogleData(search);
+            data.ParseData();
 
-        //static void SocialMention(string option)
-        //{
-        //    Console.WriteLine();
-        //    Console.WriteLine(option);
+        }
 
-        //    Console.Write("Enter search term: ");
-        //    var search = Console.ReadLine();
-        //    Console.WriteLine();
+        static void SocialMention(string option)
+        {
+            Console.WriteLine();
+            Console.WriteLine(option);
 
-        //    SocialMention data = new SocialMention(search);
-        //    data.ParseDataSM();
+            Console.Write("Enter search term: ");
+            var search = Console.ReadLine();
+            Console.WriteLine();
 
-        //}
+            SocialMention data = new SocialMention(search);
+            data.ParseDataSM();
+
+        }
 
         static void WebRequest(string option)
         {
