@@ -257,6 +257,7 @@ namespace Tutorials
 
             Console.Write("Enter search term: ");
             var search = Console.ReadLine();
+            Console.WriteLine("Searching for the term "+search);
             Console.WriteLine();
 
             SocialMention data = new SocialMention(search);
@@ -280,6 +281,8 @@ namespace Tutorials
             Console.Write("Enter search term: ");
 
             var search = Console.ReadLine();
+
+            Console.WriteLine("Searching for the term '" + search +"'");
 
 
             switch (api)

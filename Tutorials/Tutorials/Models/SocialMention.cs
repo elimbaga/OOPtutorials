@@ -44,13 +44,13 @@ namespace Tutorials.Models
                     });
                 }
 
-                foreach (var asd in ResultData.dataresult)
+                foreach (var data in ResultData.dataresult)
                 {
-                    Console.WriteLine("ID: " + asd.id);
-                    Console.WriteLine("Title: " + asd.title);
-                    Console.WriteLine("Description: " + asd.description);
-                    Console.WriteLine("Link: " + asd.link);
-                    Console.WriteLine("Source: " + asd.source);
+                    Console.WriteLine("ID: " + data.id);
+                    Console.WriteLine("Title: " + data.title);
+                    Console.WriteLine("Description: " + data.description);
+                    Console.WriteLine("Link: " + data.link);
+                    Console.WriteLine("Source: " + data.source);
                     Console.WriteLine();
                     Console.WriteLine();
                 }
@@ -67,7 +67,7 @@ namespace Tutorials.Models
             {
                 
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("Something went wrong, either the returned value is too long or the searched keyword was not found on the list.");
+                Console.WriteLine("Something went wrong, either the value returned is too long or the searched keyword was not found on the list.");
             }
            
 
